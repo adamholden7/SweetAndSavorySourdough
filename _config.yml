@@ -1,9 +1,10 @@
-title: Cast Away Guide Service
-description: Guided fly fishing trips on Wisconsin's legendary Brule River.
+title: Sweet And Savory Sourdough
+description: Small-batch sourdough loaves and treats baked fresh in Superior, Wisconsin.
 
-# MUST MATCH YOUR REPO NAME
-baseurl: "/CastAwayGuideService"
+# MUST MATCH YOUR REPO NAME (including capitalization)
+baseurl: "/SweetAndSavorySourdough"
 
+# Your GitHub username
 url: "https://adamholden7.github.io"
 
 theme: null
