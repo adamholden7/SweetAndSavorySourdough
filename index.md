@@ -1,29 +1,27 @@
 ---
 layout: default
 title: Home
-description: {{ site.data.client.tagline | default: "Guided fly fishing trips on Wisconsin's Brule River – half-day and full-day adventures with a local guide." }}
+description: Small-batch sourdough loaves and treats baked fresh in Hannah's home kitchen in Superior, Wisconsin.
 ---
 
-<section id="hero" class="hero">
+<section id="hero" class="hero hero-bakery">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
     <p class="eyebrow">
-      {{ site.data.client.tagline | default: "Guided fly fishing trips on Wisconsin's Brule River." }}
+      {{ site.data.client.tagline | default: "Small-batch sourdough loaves and treats, baked fresh at home." }}
     </p>
-    <h1>{{ site.data.client.hero_headline | default: "Chase Wild Trout on the Legendary Brule" }}</h1>
+    <h1>{{ site.data.client.hero_headline | default: "Slow-Fermented Sourdough, Baked With Care." }}</h1>
     <p class="hero-text">
-      {{ site.data.client.hero_subtext | default: "Custom half-day and full-day fly fishing trips with a local guide who knows every bend, riffle, and run." }}
+      {{ site.data.client.hero_subtext | default: "Naturally leavened loaves, focaccia, and sweet sourdough bakes crafted in small batches for maximum flavor and crunch." }}
     </p>
     <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Book a Trip</a>
-      {% if site.data.client.show_trips != false %}
-      <a href="#trips" class="btn btn-ghost">View Trips &amp; Rates</a>
-      {% endif %}
+      <a href="#order" class="btn btn-primary">Place an Order</a>
+      <a href="#menu" class="btn btn-ghost">View This Week’s Menu</a>
     </div>
     <div class="hero-meta">
-      <span>‣ Walk-and-wade &amp; drift boat options</span>
-      <span>‣ All skill levels welcome</span>
-      <span>‣ Gear available if needed</span>
+      <span>‣ Naturally leavened, long-fermented dough</span>
+      <span>‣ Local pick-up in {{ site.data.client.location | default: "your area" }}</span>
+      <span>‣ Limited batches for peak freshness</span>
     </div>
   </div>
 </section>
@@ -31,77 +29,76 @@ description: {{ site.data.client.tagline | default: "Guided fly fishing trips on
 <section id="about" class="section">
   <div class="container grid-2">
     <div class="about-text">
-      <h2>About {{ site.data.client.business_name | default: "Your Guide" }}</h2>
+      <h2>Meet {{ site.data.client.owner_name | default: "Your Baker" }}</h2>
       <p>
-        Hey, I’m <strong>{{ site.data.client.owner_name | default: "Your Guide" }}</strong> — based in
-        {{ site.data.client.location | default: "your local area" }}. I’ve spent years learning this water in every season,
-        chasing fish from the headwaters to the lower stretches.
+        Hi, I’m <strong>{{ site.data.client.owner_name | default: "Hannah" }}</strong> — a home baker in
+        {{ site.data.client.location | default: "your hometown" }} who fell in love with sourdough the slow way:
+        one starter, one loaf, and a lot of early-morning bakes.
       </p>
       <p>
-        Whether it’s your first time with a fly rod or you’re a seasoned angler hunting a personal best,
-        I’ll dial in a day tailored to your goals, conditions, and comfort level.
+        Every loaf is handcrafted using long, cold fermentation for better flavor, texture, and digestibility.
+        From classic country loaves to seeded, savory, and sweet bakes, everything is made in small batches so it
+        never feels factory-made.
       </p>
       <ul class="feature-list">
-        <li>Licensed &amp; insured Wisconsin guide</li>
-        <li>Drift boat &amp; walk-and-wade trips</li>
-        <li>Patient instruction &amp; river safety first</li>
+        <li>Naturally leavened, no commercial yeast</li>
+        <li>Locally milled flour whenever possible</li>
+        <li>Simple, transparent ingredients</li>
       </ul>
     </div>
     <div class="about-media">
       <div class="about-card">
-        <img src="{{ '/images/guide-portrait.jpg' | relative_url }}" alt="Guide on the water" />
+        <img src="{{ '/images/baker-portrait.jpg' | relative_url }}" alt="Hannah holding a sourdough loaf" />
       </div>
     </div>
   </div>
 </section>
 
-{% if site.data.client.show_trips != false and site.data.client.business_type == "guide" %}
-<section id="trips" class="section section-alt">
+{% if site.data.client.show_menu != false %}
+<section id="menu" class="section section-alt">
   <div class="container">
     <header class="section-header">
-      <h2>Trips &amp; Rates</h2>
-      <p>Simple, upfront pricing. All trips are customized around conditions and your experience level.</p>
+      <h2>This Week’s Menu</h2>
+      <p>Fresh sourdough loaves and bakes available for pre-order.</p>
     </header>
 
     <div class="card-grid">
       <article class="card">
-        <h3>Half-Day Wade Trip</h3>
-        <p class="card-price">$300</p>
+        <h3>Classic Country Loaf</h3>
+        <p class="card-price">$9</p>
         <p class="card-text">
-          4–5 hours focused on a productive stretch of river. Perfect for learning new water
-          or dialing in your technique.
+          A naturally leavened white and wheat blend with an open crumb, crispy crust, and a gentle tang.
         </p>
         <ul class="card-list">
-          <li>Up to 2 anglers</li>
-          <li>Rods, flies, and leader included</li>
-          <li>Cold drinks &amp; snacks</li>
+          <li>~750g loaf</li>
+          <li>Perfect for toast &amp; sandwiches</li>
+          <li>Available Friday &amp; Saturday pick-up</li>
         </ul>
       </article>
 
       <article class="card">
-        <h3>Full-Day Drift</h3>
-        <p class="card-price">$500</p>
+        <h3>Seeded Multigrain</h3>
+        <p class="card-price">$10</p>
         <p class="card-text">
-          8–9 hours floating prime sections of the Brule. Cover more water and target the best
-          runs based on real-time conditions.
+          Hearty sourdough packed with oats, seeds, and whole grains for a nutty, satisfying slice.
         </p>
         <ul class="card-list">
-          <li>Up to 2 anglers</li>
-          <li>Boat, safety gear &amp; all tackle</li>
-          <li>Riverside lunch</li>
+          <li>Sunflower, sesame &amp; flax</li>
+          <li>Great for avocado toast &amp; hearty sandwiches</li>
+          <li>Available Saturday pick-up</li>
         </ul>
       </article>
 
       <article class="card">
-        <h3>Custom / Seasonal</h3>
-        <p class="card-price">Varies</p>
+        <h3>Cinnamon Swirl Sourdough</h3>
+        <p class="card-price">$11</p>
         <p class="card-text">
-          Steelhead missions, evening hatches, and multi-day packages available on request.
+          A lightly sweet sourdough with a cinnamon-sugar swirl. Toast it and add butter — you’re welcome.
         </p>
         <ul class="card-list">
-          <li>Prime seasonal windows</li>
-          <li>Multi-day options</li>
-          <li>Groups and corporate trips</li>
+          <li>Limited small-batch bake</li>
+          <li>Perfect for weekend breakfasts</li>
+          <li>Pre-order only</li>
         </ul>
       </article>
     </div>
@@ -109,33 +106,34 @@ description: {{ site.data.client.tagline | default: "Guided fly fishing trips on
 </section>
 {% endif %}
 
-<section id="river" class="section">
+<section id="process" class="section">
   <div class="container grid-2">
     <div>
-      <h2>The Water</h2>
+      <h2>The Sourdough Process</h2>
       <p>
-        The local water here is a classic fishery — cold, clean, and full of structure that fish love.
-        From pocket water and riffles to deep pools, there’s always something to explore.
+        Every loaf starts with a living sourdough starter that’s fed, cared for, and refreshed daily.
+        Doughs are mixed, rested, and shaped by hand, then given a long, cold fermentation overnight.
       </p>
       <p>
-        From delicate dry-fly fishing in summer to powerful runs in the fall and spring, there’s always something
-        happening out here.
+        This slow process builds flavor, creates a beautiful open crumb, and makes sourdough easier to digest
+        than many store-bought breads.
       </p>
       <ul class="feature-list">
-        <li>Wild and stocked trout</li>
-        <li>Seasonal runs and special windows</li>
-        <li>Classic Northwoods scenery</li>
+        <li>24–48 hours from mixing to bake</li>
+        <li>Hand-shaped and scored</li>
+        <li>Baked on stone for a crisp, blistered crust</li>
       </ul>
     </div>
     <div class="river-panel">
-      <h3>Seasonal Highlights</h3>
+      <h3>How Ordering Works</h3>
       <ul class="season-list">
-        <li><span>April–May:</span> Spring fish &amp; early hatches</li>
-        <li><span>June–August:</span> Dry flies, terrestrials &amp; evening trips</li>
-        <li><span>September–November:</span> Fall colors &amp; big fish</li>
+        <li><span>1.</span> Check the weekly menu above.</li>
+        <li><span>2.</span> Submit your order request with preferred pick-up day.</li>
+        <li><span>3.</span> Get a confirmation email with details &amp; payment options.</li>
       </ul>
       <p class="river-note">
-        For current conditions and availability, reach out and I’ll let you know what’s fishing best.
+        Bakes are limited each week to keep everything fresh and manageable. If a date is full, I’ll offer the
+        next available pick-up day.
       </p>
     </div>
   </div>
@@ -145,21 +143,21 @@ description: {{ site.data.client.tagline | default: "Guided fly fishing trips on
 <section id="gallery" class="section section-alt">
   <div class="container">
     <header class="section-header">
-      <h2>On the Water</h2>
-      <p>A few moments from recent days out here.</p>
+      <h2>From the Oven</h2>
+      <p>A peek at some recent loaves and bakes coming out of the kitchen.</p>
     </header>
     <div class="gallery-grid">
       <figure class="gallery-item">
-        <img src="{{ '/images/gallery-1.jpg' | relative_url }}" alt="Angler landing a fish" />
+        <img src="{{ '/images/bread-1.jpg' | relative_url }}" alt="Crusty sourdough loaf on a cutting board" />
       </figure>
       <figure class="gallery-item">
-        <img src="{{ '/images/gallery-2.jpg' | relative_url }}" alt="Boat on a misty morning" />
+        <img src="{{ '/images/bread-2.jpg' | relative_url }}" alt="Sliced sourdough showing open crumb" />
       </figure>
       <figure class="gallery-item">
-        <img src="{{ '/images/gallery-3.jpg' | relative_url }}" alt="Close-up of a fish" />
+        <img src="{{ '/images/bread-3.jpg' | relative_url }}" alt="Seeded multigrain sourdough loaf" />
       </figure>
       <figure class="gallery-item">
-        <img src="{{ '/images/gallery-4.jpg' | relative_url }}" alt="River at sunset through the trees" />
+        <img src="{{ '/images/bread-4.jpg' | relative_url }}" alt="Cinnamon swirl sourdough slices" />
       </figure>
     </div>
   </div>
@@ -170,34 +168,34 @@ description: {{ site.data.client.tagline | default: "Guided fly fishing trips on
 <section class="section">
   <div class="container">
     <header class="section-header">
-      <h2>What Clients Are Saying</h2>
+      <h2>What People Are Saying</h2>
     </header>
     <div class="card-grid testimonials">
       <article class="card testimonial">
-        <p>“Hands down the best day I’ve had on the water. Learned a ton and landed my biggest fish yet.”</p>
-        <span class="testimonial-name">— Alex M.</span>
+        <p>“The best sourdough I’ve had in Duluth. Crunchy crust, soft inside, and amazing toasted.”</p>
+        <span class="testimonial-name">— Emily W.</span>
       </article>
       <article class="card testimonial">
-        <p>“Patient, dialed-in, and fun to be around. Perfect for my son’s first trip.”</p>
-        <span class="testimonial-name">— Jamie R.</span>
+        <p>“We plan our weekends around Hannah’s loaves now. The cinnamon swirl is dangerous in the best way.”</p>
+        <span class="testimonial-name">— Mark &amp; Jenna</span>
       </article>
       <article class="card testimonial">
-        <p>“Knows where the fish are and explains the ‘why’ behind every move. I’ll be back every season.”</p>
-        <span class="testimonial-name">— Chris D.</span>
+        <p>“You can taste the care and time in every loaf. It feels like bakery-quality bread out of a home kitchen.”</p>
+        <span class="testimonial-name">— Lauren P.</span>
       </article>
     </div>
   </div>
 </section>
 {% endif %}
 
-{% if site.data.client.show_booking_form != false %}
-<section id="contact" class="section section-accent">
+{% if site.data.client.show_order_form != false %}
+<section id="order" class="section section-accent">
   <div class="container grid-2">
     <div>
-      <h2>Book Your Day</h2>
+      <h2>Place an Order</h2>
       <p>
-        Tell me what kind of trip you’re interested in, your preferred dates, and your experience level.
-        I’ll get back to you with availability and details.
+        Share what you’d like to order, how many loaves, and your preferred pick-up day. I’ll confirm
+        availability and follow up with payment details.
       </p>
       <div class="contact-details">
         <p>
@@ -205,10 +203,8 @@ description: {{ site.data.client.tagline | default: "Guided fly fishing trips on
           <a href="mailto:{{ site.data.client.email }}">{{ site.data.client.email }}</a>
         </p>
         <p>
-          <strong>Phone:</strong>
-          <a href="tel:{{ site.data.client.phone | replace: '(', '' | replace: ')', '' | replace: ' ', '' | replace: '-', '' }}">
-            {{ site.data.client.phone }}
-          </a>
+          <strong>Location:</strong>
+          {{ site.data.client.location | default: "Local pick-up" }} (address shared upon confirmation)
         </p>
       </div>
     </div>
@@ -221,21 +217,25 @@ description: {{ site.data.client.tagline | default: "Guided fly fishing trips on
         <label for="email">Email</label>
         <input id="email" name="email" type="email" required />
       </div>
+      <div class="form-row">
+        <label for="items">What would you like to order?</label>
+        <textarea id="items" name="items" rows="3" placeholder="e.g., 1 Classic Country, 1 Seeded Multigrain, 1 Cinnamon Swirl"></textarea>
+      </div>
       <div class="form-row form-row-inline">
         <div>
-          <label for="date">Preferred Date</label>
-          <input id="date" name="date" type="date" />
+          <label for="pickup-day">Preferred Pick-Up Day</label>
+          <input id="pickup-day" name="pickup-day" type="date" />
         </div>
         <div>
-          <label for="group-size">Group Size</label>
-          <input id="group-size" name="group-size" type="number" min="1" max="4" />
+          <label for="quantity">Approximate Total Loaves</label>
+          <input id="quantity" name="quantity" type="number" min="1" max="10" />
         </div>
       </div>
       <div class="form-row">
-        <label for="message">Trip Details</label>
-        <textarea id="message" name="message" rows="4" placeholder="Tell me about your ideal day on the water..."></textarea>
+        <label for="notes">Notes (allergies, timing, etc.)</label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+      <button type="submit" class="btn btn-primary btn-block">Submit Order Request</button>
     </form>
   </div>
 </section>
