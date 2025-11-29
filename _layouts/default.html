@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="{{ '/' | relative_url }}" class="logo">Castaway<span> Guide Service</span></a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
+      <nav class="site-nav">
+        <a href="{{ '/#about' | relative_url }}">About</a>
+        <a href="{{ '/#trips' | relative_url }}">Trips</a>
+        <a href="{{ '/#river' | relative_url }}">The Brule</a>
+        <a href="{{ '/#gallery' | relative_url }}">Gallery</a>
+        <a href="{{ '/blog' | relative_url }}">River Reports</a>
+        <a href="{{ '/#contact' | relative_url }}" class="nav-cta">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> {{ site.title }}. All rights reserved.</p>
+      <p class="footer-meta">Licensed Wisconsin Fly Fishing Guide • Brule River, WI</p>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+</body>
+</html>

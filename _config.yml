@@ -1,0 +1,11 @@
+title: Cast Away Guide Service
+description: Guided fly fishing trips on Wisconsin's legendary Brule River.
+
+# MUST MATCH YOUR REPO NAME
+baseurl: "/CastAwayGuideService"
+
+url: "https://adamholden7.github.io"
+
+theme: null
+markdown: kramdown
+plugins: []
