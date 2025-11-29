@@ -55,70 +55,85 @@ description: Small-batch sourdough loaves and treats baked fresh in Hannah's hom
 </section>
 
 {% if site.data.client.show_menu != false %}
-<section id="menu" class="section menu-section">
-  <div class="container">
-    <header class="section-header menu-header">
-      <p class="menu-eyebrow">
-        {{ site.data.client.business_name | default: "Sweet & Savory Sourdough" }}
-      </p>
-      <h2 class="menu-title-script">
-        {{ site.data.client.seasonal_menu_title | default: "Seasonal Menu" }}
-      </h2>
-      <p class="menu-subtitle">Pre-order sourdough and desserts for your table.</p>
-    </header>
+<section id="menu" class="section section-alt menu-store">
+  <div class="container menu-layout">
+    <div class="menu-products">
+      <header class="section-header menu-header">
+        <p class="menu-eyebrow">
+          {{ site.data.client.business_name | default: "Sweet & Savory Sourdough" }}
+        </p>
+        <h2>This Week’s Menu</h2>
+        <p>Tap “Add to cart” to build your order, then submit it below.</p>
+      </header>
 
-    <div class="menu-card">
-      <div class="menu-inner">
-        <h3 class="menu-category">Sourdough Bread</h3>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <span class="menu-item-name">Cranberry Walnut</span>
-            <span class="menu-item-price">$12</span>
-          </li>
-          <li class="menu-item">
-            <span class="menu-item-name">Cinnamon Maple Pecan</span>
-            <span class="menu-item-price">$12</span>
-          </li>
-          <li class="menu-item">
-            <span class="menu-item-name">Apple Cider Donut <span class="menu-item-note">(loaf style only)</span></span>
-            <span class="menu-item-price">$12</span>
-          </li>
-        </ul>
+      <h3 class="menu-section-title">Sourdough Bread</h3>
+      <div class="product-grid">
+        <article class="product-card" data-id="cranberry-walnut" data-name="Cranberry Walnut" data-price="12">
+          <h4 class="product-name">Cranberry Walnut</h4>
+          <p class="product-desc">Tart cranberries and toasted walnuts in a soft, chewy sourdough loaf.</p>
+          <p class="product-price">$12</p>
+          <button class="btn btn-sm add-to-cart">Add to cart</button>
+        </article>
 
-        <h3 class="menu-category">Desserts</h3>
-        <ul class="menu-list">
-          <li class="menu-item">
-            <span class="menu-item-name">Cranberry Bars</span>
-            <span class="menu-item-price">6/$15 · 12/$28</span>
-          </li>
-          <li class="menu-item">
-            <span class="menu-item-name">Pumpkin Coffee Cake Muffins</span>
-            <span class="menu-item-price">6/$16 · 12/$28</span>
-          </li>
-          <li class="menu-item">
-            <span class="menu-item-name">Oatmeal Cream Pies</span>
-            <span class="menu-item-price">6/$15 · 12/$28</span>
-          </li>
-          <li class="menu-item">
-            <span class="menu-item-name">Jumbo Cinnamon Rolls</span>
-            <span class="menu-item-price">6/$20 · 12/$35</span>
-          </li>
-        </ul>
+        <article class="product-card" data-id="cinnamon-maple-pecan" data-name="Cinnamon Maple Pecan" data-price="12">
+          <h4 class="product-name">Cinnamon Maple Pecan</h4>
+          <p class="product-desc">Lightly sweet sourdough with cinnamon, maple, and toasted pecans.</p>
+          <p class="product-price">$12</p>
+          <button class="btn btn-sm add-to-cart">Add to cart</button>
+        </article>
 
-        <div class="menu-footer">
-          <p class="menu-contact">
-            {{ site.data.client.business_name | default: "Sweet & Savory Sourdough" }} ·
-            <a href="tel:{{ site.data.client.phone | replace: '-', '' | replace: ' ', '' }}">
-              {{ site.data.client.phone }}
-            </a>
-            · text or call to order
-          </p>
-          <p class="menu-note">
-            {{ site.data.client.seasonal_menu_note | default: "All orders must be picked up during the specified pick-up window." }}
-          </p>
-        </div>
+        <article class="product-card" data-id="apple-cider-donut" data-name="Apple Cider Donut (Loaf Style)" data-price="12">
+          <h4 class="product-name">Apple Cider Donut (Loaf Style)</h4>
+          <p class="product-desc">All the cozy cider donut flavors in a shareable loaf.</p>
+          <p class="product-price">$12</p>
+          <button class="btn btn-sm add-to-cart">Add to cart</button>
+        </article>
+      </div>
+
+      <h3 class="menu-section-title">Desserts</h3>
+      <div class="product-grid">
+        <article class="product-card" data-id="cranberry-bars" data-name="Cranberry Bars (6)" data-price="15">
+          <h4 class="product-name">Cranberry Bars</h4>
+          <p class="product-desc">Bright, tangy cranberry filling on a buttery base.</p>
+          <p class="product-price">6/$15 · 12/$28</p>
+          <button class="btn btn-sm add-to-cart" data-alt-price="28" data-alt-label="12/$28">Add 6-pack</button>
+        </article>
+
+        <article class="product-card" data-id="pumpkin-muffins" data-name="Pumpkin Coffee Cake Muffins (6)" data-price="16">
+          <h4 class="product-name">Pumpkin Coffee Cake Muffins</h4>
+          <p class="product-desc">Pumpkin muffins with a cinnamon streusel top.</p>
+          <p class="product-price">6/$16 · 12/$28</p>
+          <button class="btn btn-sm add-to-cart">Add 6-pack</button>
+        </article>
+
+        <article class="product-card" data-id="oatmeal-cream-pies" data-name="Oatmeal Cream Pies (6)" data-price="15">
+          <h4 class="product-name">Oatmeal Cream Pies</h4>
+          <p class="product-desc">Soft oat cookies sandwiched with vanilla cream.</p>
+          <p class="product-price">6/$15 · 12/$28</p>
+          <button class="btn btn-sm add-to-cart">Add 6-pack</button>
+        </article>
+
+        <article class="product-card" data-id="jumbo-cinnamon-rolls" data-name="Jumbo Cinnamon Rolls (6)" data-price="20">
+          <h4 class="product-name">Jumbo Cinnamon Rolls</h4>
+          <p class="product-desc">Extra fluffy rolls with plenty of cinnamon and icing.</p>
+          <p class="product-price">6/$20 · 12/$35</p>
+          <button class="btn btn-sm add-to-cart">Add 6-pack</button>
+        </article>
       </div>
     </div>
+
+    <aside class="menu-cart" aria-label="Order summary">
+      <h3>Your Cart</h3>
+      <p class="cart-empty">No items yet. Add something from the menu.</p>
+      <ul id="cart-items" class="cart-items"></ul>
+      <p class="cart-total-row">
+        <span>Total</span>
+        <span id="cart-total">$0</span>
+      </p>
+      <p class="cart-note">
+        This is a pre-order only – you’ll send this cart with your contact details below.
+      </p>
+    </aside>
   </div>
 </section>
 {% endif %}
