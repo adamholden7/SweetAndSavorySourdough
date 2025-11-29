@@ -5,12 +5,15 @@ owner_name: "Hannah Phillips"
 location: "Superior, WI"
 
 email: "orders@sweetandsavorysourdough.com"
-phone: "(218) 555-7423"
+phone: "218-428-6067"
 
 hero_headline: "Slow-Fermented Sourdough, Baked With Care."
 hero_subtext: "Naturally leavened loaves, focaccia, and sweet sourdough bakes crafted in small batches for maximum flavor and crunch."
 
 business_type: "bakery"
+
+seasonal_menu_title: "Thanksgiving Menu"
+seasonal_menu_note: "All orders must be picked up on Wednesday 11/26 between 5–9pm."
 
 # Colors for the theme (you can wire these into CSS variables later)
 primary_color: "#5C4033"   # warm brown, like a crust
