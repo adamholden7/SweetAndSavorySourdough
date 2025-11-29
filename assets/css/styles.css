@@ -1,16 +1,20 @@
 :root {
-  --bg: #fafaf9;
-  --bg-alt: #f2e9e4;
-  --accent: #1c6e8c;
-  --accent-soft: rgba(28, 110, 140, 0.08);
-  --primary: #0b3d2e;
-  --text: #111827;
-  --text-muted: #6b7280;
+  /* Warm bakery / bread colors */
+  --bg: #fff8f0;            /* soft warm background */
+  --bg-alt: #fbe9da;        /* slightly deeper beige */
+  --accent: #f59e0b;        /* golden crust / highlight */
+  --accent-soft: rgba(245, 158, 11, 0.08);
+
+  --primary: #5c4033;       /* deep brown (loaf crust) */
+  --text: #3f2a20;          /* warm dark text */
+  --text-muted: #856a5a;    /* muted brown text */
+
   --white: #ffffff;
-  --border-subtle: #e5e7eb;
+  --border-subtle: #e5d4c4;
+
   --radius-lg: 1.25rem;
   --radius-md: 0.75rem;
-  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 18px 40px rgba(60, 38, 21, 0.18);
   --transition-fast: 180ms ease-out;
   --max-width: 1120px;
 }
@@ -142,11 +146,11 @@ a {
 /* HERO */
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
-  color: var(--white);
-  background-image: url("{{ '/images/hero-river.jpg' | relative_url }}");
+  color: var(--primary);
+  background-image: url("../images/bakery-hero.jpg"); /* replace with your bread photo */
   background-size: cover;
   background-position: center;
 }
@@ -154,8 +158,11 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(11, 61, 46, 0.2), transparent),
-    linear-gradient(to bottom, rgba(11, 61, 46, 0.86), rgba(11, 61, 46, 0.92));
+  background: linear-gradient(
+    to right,
+    rgba(255, 248, 240, 0.96),
+    rgba(255, 248, 240, 0.75)
+  );
 }
 
 .hero-content {
