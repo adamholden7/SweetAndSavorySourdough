@@ -1,18 +1,24 @@
-business_name: "Cast Away Guide Service"
-tagline: "Guided fly fishing trips on Wisconsin's legendary Brule River."
+business_name: "Sweet And Savory Sourdough"
+tagline: "Small-batch sourdough loaves and treats, baked fresh in Hannah's home kitchen."
 
-owner_name: "Jake Peterson"
-location: "Brule, Wisconsin"
+owner_name: "Hannah Phillips"
+location: "Superior, WI"
 
-email: "info@castawayguides.com"
-phone: "(555) 555-5555"
+email: "orders@sweetandsavorysourdough.com"
+phone: "(218) 555-7423"
 
-hero_headline: "Chase Wild Trout on the Legendary Brule"
-hero_subtext: "Custom half-day and full-day fly fishing trips with a local guide who knows every bend, riffle, and run."
+hero_headline: "Slow-Fermented Sourdough, Baked With Care."
+hero_subtext: "Naturally leavened loaves, focaccia, and sweet sourdough bakes crafted in small batches for maximum flavor and crunch."
 
-business_type: "guide"   # later: "bakery", "photography", etc.
+business_type: "bakery"
 
-show_availability: true
+# Colors for the theme (you can wire these into CSS variables later)
+primary_color: "#5C4033"   # warm brown, like a crust
+accent_color: "#F59E0B"    # golden, like a baked loaf
+background_color: "#FFF7EC" # soft warm background (optional extra)
+
 show_gallery: true
-show_blog: true
-show_booking_form: true
+show_menu: true
+show_blog: false
+show_order_form: true
+show_testimonials: true
