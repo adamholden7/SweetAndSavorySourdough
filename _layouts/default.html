@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <title>
+    {% if page.title %}{{ page.title }} | {% endif %}
+    {{ site.data.client.business_name | default: site.title }}
+  </title>
+  <meta name="description" content="{{ page.description | default: site.data.client.tagline | default: site.description }}" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +19,12 @@
 <body>
   <header class="site-header">
     <div class="container nav-container">
-      <a href="{{ '/' | relative_url }}" class="logo">Castaway<span> Guide Service</span></a>
+      <!-- Dynamic logo text from client.yml -->
+      <a href="{{ '/' | relative_url }}" class="logo">
+        <span class="logo-title">
+          {{ site.data.client.business_name | default: site.title }}
+        </span>
+      </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="nav-toggle-line"></span>
@@ -25,11 +33,24 @@
 
       <nav class="site-nav">
         <a href="{{ '/#about' | relative_url }}">About</a>
-        <a href="{{ '/#trips' | relative_url }}">Trips</a>
-        <a href="{{ '/#river' | relative_url }}">The Brule</a>
-        <a href="{{ '/#gallery' | relative_url }}">Gallery</a>
-        <a href="{{ '/blog' | relative_url }}">River Reports</a>
-        <a href="{{ '/#contact' | relative_url }}" class="nav-cta">Book Now</a>
+
+        {% if site.data.client.business_type == "guide" %}
+          <a href="{{ '/#trips' | relative_url }}">Trips</a>
+          <a href="{{ '/#river' | relative_url }}">The River</a>
+          <a href="{{ '/#gallery' | relative_url }}">Gallery</a>
+          <a href="{{ '/blog' | relative_url }}">River Reports</a>
+          <a href="{{ '/#contact' | relative_url }}" class="nav-cta">Book Now</a>
+        {% elsif site.data.client.business_type == "bakery" %}
+          <a href="{{ '/#menu' | relative_url }}">Menu</a>
+          <a href="{{ '/#process' | relative_url }}">Process</a>
+          <a href="{{ '/#gallery' | relative_url }}">Gallery</a>
+          <a href="{{ '/#order' | relative_url }}" class="nav-cta">Order</a>
+        {% else %}
+          <!-- Generic fallback nav if business_type isn't set -->
+          <a href="{{ '/#services' | relative_url }}">Services</a>
+          <a href="{{ '/#gallery' | relative_url }}">Gallery</a>
+          <a href="{{ '/#contact' | relative_url }}" class="nav-cta">Contact</a>
+        {% endif %}
       </nav>
     </div>
   </header>
@@ -40,8 +61,10 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> {{ site.title }}. All rights reserved.</p>
-      <p class="footer-meta">Licensed Wisconsin Fly Fishing Guide • Brule River, WI</p>
+      <p>&copy; <span id="year"></span> {{ site.data.client.business_name | default: site.title }}. All rights reserved.</p>
+      <p class="footer-meta">
+        {{ site.data.client.location | default: "Local small business" }}
+      </p>
     </div>
   </footer>
 
