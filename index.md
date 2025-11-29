@@ -55,56 +55,74 @@ description: Small-batch sourdough loaves and treats baked fresh in Hannah's hom
 </section>
 
 {% if site.data.client.show_menu != false %}
-<section id="menu" class="section section-alt">
+<section id="menu" class="section menu-section">
   <div class="container">
-    <header class="section-header">
-      <h2>This Week’s Menu</h2>
-      <p>Fresh sourdough loaves and bakes available for pre-order.</p>
+    <header class="section-header menu-header">
+      <p class="menu-eyebrow">
+        {{ site.data.client.business_name | default: "Sweet & Savory Sourdough" }}
+      </p>
+      <h2 class="menu-title-script">
+        {{ site.data.client.seasonal_menu_title | default: "Seasonal Menu" }}
+      </h2>
+      <p class="menu-subtitle">Pre-order sourdough and desserts for your table.</p>
     </header>
 
-    <div class="card-grid">
-      <article class="card">
-        <h3>Classic Country Loaf</h3>
-        <p class="card-price">$9</p>
-        <p class="card-text">
-          A naturally leavened white and wheat blend with an open crumb, crispy crust, and a gentle tang.
-        </p>
-        <ul class="card-list">
-          <li>~750g loaf</li>
-          <li>Perfect for toast &amp; sandwiches</li>
-          <li>Available Friday &amp; Saturday pick-up</li>
+    <div class="menu-card">
+      <div class="menu-inner">
+        <h3 class="menu-category">Sourdough Bread</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="menu-item-name">Cranberry Walnut</span>
+            <span class="menu-item-price">$12</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-name">Cinnamon Maple Pecan</span>
+            <span class="menu-item-price">$12</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-name">Apple Cider Donut <span class="menu-item-note">(loaf style only)</span></span>
+            <span class="menu-item-price">$12</span>
+          </li>
         </ul>
-      </article>
 
-      <article class="card">
-        <h3>Seeded Multigrain</h3>
-        <p class="card-price">$10</p>
-        <p class="card-text">
-          Hearty sourdough packed with oats, seeds, and whole grains for a nutty, satisfying slice.
-        </p>
-        <ul class="card-list">
-          <li>Sunflower, sesame &amp; flax</li>
-          <li>Great for avocado toast &amp; hearty sandwiches</li>
-          <li>Available Saturday pick-up</li>
+        <h3 class="menu-category">Desserts</h3>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <span class="menu-item-name">Cranberry Bars</span>
+            <span class="menu-item-price">6/$15 · 12/$28</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-name">Pumpkin Coffee Cake Muffins</span>
+            <span class="menu-item-price">6/$16 · 12/$28</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-name">Oatmeal Cream Pies</span>
+            <span class="menu-item-price">6/$15 · 12/$28</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-name">Jumbo Cinnamon Rolls</span>
+            <span class="menu-item-price">6/$20 · 12/$35</span>
+          </li>
         </ul>
-      </article>
 
-      <article class="card">
-        <h3>Cinnamon Swirl Sourdough</h3>
-        <p class="card-price">$11</p>
-        <p class="card-text">
-          A lightly sweet sourdough with a cinnamon-sugar swirl. Toast it and add butter — you’re welcome.
-        </p>
-        <ul class="card-list">
-          <li>Limited small-batch bake</li>
-          <li>Perfect for weekend breakfasts</li>
-          <li>Pre-order only</li>
-        </ul>
-      </article>
+        <div class="menu-footer">
+          <p class="menu-contact">
+            {{ site.data.client.business_name | default: "Sweet & Savory Sourdough" }} ·
+            <a href="tel:{{ site.data.client.phone | replace: '-', '' | replace: ' ', '' }}">
+              {{ site.data.client.phone }}
+            </a>
+            · text or call to order
+          </p>
+          <p class="menu-note">
+            {{ site.data.client.seasonal_menu_note | default: "All orders must be picked up during the specified pick-up window." }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 {% endif %}
+
 
 <section id="process" class="section">
   <div class="container grid-2">
